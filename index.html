@@ -17,20 +17,61 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    Header
+        <div class="container main-app">
+            <div class="row main-app__header">
+                <div class="col-9">
+                    <h1 class="display-1">RestoPlace</h1>
+                    <p class="lead">
+                        Унікальний сервіс для ресторанів та відвідувачів
+                    </p>
+                </div>
+                <div class="col-3 container">
+                    <div class="row main-app__header--marginTop">
+                        <div class="col">
+                            <label for="validationTooltipUsername" class="form-label">Username</label>
+                            <div class="input-group has-validation">
+                                <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+                                <div class="invalid-tooltip">
+                                    Please choose a unique and valid username.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row main-app__header--marginTop">
+                        <div class="col">
+                            <label for="validationTooltip02" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="validationTooltip02" required>
+                        </div>
+                    </div>
+                    <div class="row main-app__header--marginTop">
+                        <div class="col-6">
+                            <button class="btn btn-primary">Login</button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-secondary">Signup</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row main-app__content">
+                <div class="col">
+                    TOP Restorations
+                </div>
+            </div>
+            <div class="row main-app__content">
                 <div class="col">
                     Content
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    Footer
+            <div class="row main-app__footer">
+                <div class="col-4">
+                    Contacts
+                </div>
+                <div class="col-4">
+                    Terms & Agreements
+                </div>
+                <div class="col-4">
+                    Feedback
                 </div>
             </div>
         </div>

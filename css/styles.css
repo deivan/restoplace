@@ -2,3 +2,33 @@
 body {
     background-color: lemonchiffon;
 }
+
+.main-app {
+    background-color: #fff;
+    margin-top: 2%;
+}
+
+.main-app__header {
+    background-color: #ddd;
+    color: #008;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-bottom: 16px;
+}
+
+.main-app__header--marginTop {
+    margin-top: 8px;
+}
+
+.main-app__content {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.main-app__footer {
+    padding-top: 36px;
+    padding-bottom: 16px;
+    background-color: lightgreen;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
