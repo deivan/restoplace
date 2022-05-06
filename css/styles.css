@@ -20,6 +20,11 @@ body {
     margin-top: 8px;
 }
 
+.main-app__header--selectedCity {
+    color: blue;
+    font-weight: 900;
+}
+
 .main-app__content {
     padding-top: 16px;
     padding-bottom: 16px;

@@ -24,6 +24,17 @@
                     <p class="lead">
                         Унікальний сервіс для ресторанів та відвідувачів
                     </p>
+                    <div class="dropdown form-check-inline">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Оберіть ваше місто
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="citySelector">
+                            <li><a class="dropdown-item" data-city="kyiv" href="#">Київ</a></li>
+                            <li><a class="dropdown-item" data-city="dnipro" href="#">Дніпро</a></li>
+                            <li><a class="dropdown-item" data-city="lviv" href="#">Львів</a></li>
+                        </ul>
+                    </div>
+                    <p class="lead form-check-inline main-app__header--selectedCity" id="selectedCity"></p>
                 </div>
                 <div class="col-3 container">
                     <div class="row main-app__header--marginTop">
