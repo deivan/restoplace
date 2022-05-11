@@ -1,3 +1,24 @@
+/* обнулящие свойства */
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+
+/* обнулящие свойства end*/
 /*      Custom styles and rules     */
 body {
     background-color: lemonchiffon;
@@ -37,3 +58,27 @@ body {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
+
+.img__top-rest {
+    height: 180px;
+}
+
+/*body*/
+.restoran__card {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: #000;
+}
+
+.card-body {
+    color: #000;
+}
+
+.card__body:hover {
+    background-color: #5c5a5a;
+    /*todo color no work in hover*/
+    color: #ddd;
+}
+
+/*body end*/
