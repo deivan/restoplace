@@ -31,11 +31,7 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Оберіть ваше місто
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="citySelector">
-                        <li><a class="dropdown-item" data-city="kyiv" href="#">Київ</a></li>
-                        <li><a class="dropdown-item" data-city="dnipro" href="#">Дніпро</a></li>
-                        <li><a class="dropdown-item" data-city="lviv" href="#">Львів</a></li>
-                    </ul>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="citySelector"></ul>
                 </div>
                 <p class="lead form-check-inline main-app__header--selectedCity" id="selectedCity"></p>
             </div>
@@ -170,105 +166,19 @@
             </div>
         </div>
         <div class="row main-app__content">
-            <div class="col">
-                <h2>Restorations <span> in Kiev</span></h2>
-                <div class="col d-flex justify-content-center flex-wrap">
-                    <div class="col-3 restoran__card">
-                        <a href="#" class="restoran__card-btn">
-                            <div class="card card__body" style="width: 18rem;">
-                                <img src="img/top_res1.jpg" class="card-img-top img__top-rest" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the
-                                        bulk
-                                        of the card's content.</p>
-                                </div>
-                        </a>
-                    </div>
+            <div class="col-3">
+                <h2>Restorations in <span id="selectedCityLabel"></span></h2>
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                      Оберіть заклад
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="restorationListSelector"></ul>
                 </div>
-                <div class="col-3 restoran__card">
-                    <a href="#" class="restoran__card-btn">
-                        <div class="card card__body" style="width: 18rem;">
-                            <img src="img/top_res2.jpg" class="card-img-top img__top-rest" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of the card's content.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3 restoran__card">
-                    <a href="#" class="restoran__card-btn">
-                        <div class="card card__body" style="width:18rem;">
-                            <img src="img/top_res3.jpg" class="card-img-top img__top-rest" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of the card's content.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3 restoran__card">
-                    <a href="#" class="restoran__card-btn">
-                        <div class="card card__body" style="width: 18rem;">
-                            <img src="img/top_res4.jpg" class="card-img-top img__top-rest" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of the card's content.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3 restoran__card">
-                    <a href="#" class="restoran__card-btn">
-                        <div class="card card__body" style="width: 18rem;">
-                            <img src="img/top_res1.jpg" class="card-img-top img__top-rest" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of the card's content.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3 restoran__card">
-                    <a href="#" class="restoran__card-btn">
-                        <div class="card card__body" style="width: 18rem;">
-                            <img src="img/top_res2.jpg" class="card-img-top img__top-rest" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of the card's content.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3 restoran__card">
-                    <a href="#" class="restoran__card-btn">
-                        <div class="card card__body" style="width:18rem;">
-                            <img src="img/top_res3.jpg" class="card-img-top img__top-rest" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of the card's content.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-3 restoran__card">
-                    <a href="#" class="restoran__card-btn">
-                        <div class="card card__body" style="width: 18rem;">
-                            <img src="img/top_res4.jpg" class="card-img-top img__top-rest" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of the card's content.</p>
-                            </div>
-                        </div>
-                    </a>
+                <div id="restoranDetails"></div>
+            </div>
+            <div class="col-9">
+                <div class="container">
+                    
                 </div>
             </div>
         </div>
