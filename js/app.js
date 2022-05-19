@@ -8,9 +8,20 @@ class App {
   cities = [];
 
   constructor() {
-    this.selectedCity = '';
+    this.selectedCity = null;
+    this.restoranSelector = document.getElementById('restorationListSelector');
     this.initCities();
     this.initEvents();
+    this.restoreCity();
+  }
+
+  restoreCity() {
+    this.selectedCity = window.localStorage.getItem('selectedCity');
+    if (this.selectedCity) {
+      document.querySelector('#selectedCity').innerText = this.cities[this.selectedCity - 1];
+      document.querySelector('#selectedCityLabel').innerText = this.cities[this.selectedCity - 1];
+      this.fillRestoranList();  
+    }
   }
 
   initCities() {
@@ -28,76 +39,77 @@ class App {
       if (this.selectedCity) {
         document.querySelector('#selectedCity').innerText = this.cities[this.selectedCity - 1];
         document.querySelector('#selectedCityLabel').innerText = this.cities[this.selectedCity - 1];
-        this.fillRestoranList(this.selectedCity);
+        this.fillRestoranList();
+        document.getElementById('restoranDetails').innerHTML = '';
+        window.localStorage.setItem('selectedCity', this.selectedCity);
       }
+    });
+
+    this.restoranSelector.addEventListener('click', e => {
+      let restoranId = e.target.dataset.restoran || '';
+      let selectedCity = DB.filter(item => item.id == +this.selectedCity)[0];
+      let selected = selectedCity.data.filter(item => item.id == restoranId)[0];
+      let workTime = this.fillData(selected.workTimes);
+
+      document.getElementById('restoranDetails').innerHTML = `
+        <h3>${selected.name}</h3>
+        <p><strong class="main-addres">Адреса:</strong>${selected.address}</p>${workTime}
+      `;
+      this.fillMenu(selected.menu);
+
     });
   }
 
-  fillRestoranList(city) {
+  fillRestoranList() {
+    let selectedCity = DB.filter(item => item.id == +this.selectedCity)[0];
 
-    let workTime;
-    let selectedCity = DB.filter(item => item.id == city)[0];
-    let restoranSelector = document.getElementById('restorationListSelector');
+    this.restoranSelector.innerHTML = '';
 
     selectedCity.data.forEach(item => {
       let li = document.createElement('LI');
       li.innerHTML = `<span class="dropdown-item" data-restoran="${item.id}">${item.name}</span>`
-      restoranSelector.appendChild(li);
+      this.restoranSelector.appendChild(li);
     });
-
-    restoranSelector.addEventListener('click', e => {
-      let restoranId = e.target.dataset.restoran || '';
-      let selected = selectedCity.data.filter(item => item.id == restoranId)[0];
-
-      workTime = this.fillData(selected);
-
-      document.getElementById('restoranDetails').innerHTML = `
-        <p><strong class="main-addres">Адреса:</strong>${selected.address}</p>
-     ${workTime}
-      `;
-      this.fillMenu(selected.menu);
-
-    })
   }
 
   fillMenu(menu) {
-    let menuposicion = document.querySelector('.cards__block');
+    let menuposicion = document.querySelector('#currentMenu');
+
+    menuposicion.removeEventListener('click', this.addToCart);
+    menuposicion.innerHTML = '';
+
     for (let i = 0; i < menu.length; i++) {
+      let itemWrapper = document.createElement('DIV');
 
-      let obverkaTovara = document.createElement('DIV');
-      obverkaTovara.className = "card card-menu";
-      obverkaTovara.innerHTML = ` <img src="https://bipbap.ru/wp-content/uploads/2017/06/14813uxVsXjAPBFmIovEzZkHNnR.jpg"
-      class="card-img-top" alt="картинка блюда">
-  <div class="card-body">
-      <h5 class="card-title card__title-menu">${menu[i].name}</h5>
-  </div>
-  <ul class="list-group list-group-flush">
-      <li class="list-group-item">Prise: ${menu[i].price}</li>
-      <li class="list-group-item">Grammar:0</li>
-  </ul>
-  <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-  </div>`;
-      menuposicion.appendChild(obverkaTovara);
+      itemWrapper.className = "card card-menu";
+      itemWrapper.innerHTML = `
+        <img src="https://bipbap.ru/wp-content/uploads/2017/06/14813uxVsXjAPBFmIovEzZkHNnR.jpg"
+             class="card-img-top" alt="картинка блюда">
+          <div class="card-body">
+            <h5 class="card-title card__title-menu">${menu[i].name}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Price: ${menu[i].price}</li>
+          </ul>
+          <div class="card-body">
+            <button type="button" class="btn btn-success js-add-item-to-cart" data-id="${menu[i].id}">До кошику</button>
+          </div>
+      `;
+      menuposicion.appendChild(itemWrapper);
+      menuposicion.addEventListener('click', this.addToCart);
     }
-    //console.log(menu);
   }
-  fillData(WorkTime) {
-    let deteWork = ['пн.', 'вт.', 'ср.', 'чт.', 'пт.', 'сб.', 'вс.'];
-    let detePush = "";
-    let i = 0;
-    WorkTime.workTimes.forEach(element => {
-      if (element !== "") {
-        detePush += `<p class='date__work'>${deteWork[i]}${element.toString()}</p>`;
-      }
-      else if(element == "") {
-        detePush += `<p class='date__work'>${deteWork[i]} не работаем</p>`;
-      }
-      i++;
 
-    });
-    //console.log(detePush);
-    return detePush;
+  addToCart(e) {
+    console.log(+e.target.dataset.id)
+  }
+
+  fillData(wt) {
+    let dateWork = ['пн.', 'вт.', 'ср.', 'чт.', 'пт.', 'сб.', 'нд.'];
+    let datePush = '';
+    for (let i = 0; i < wt.length; i++) {
+      datePush += `${dateWork[i]} ${wt[i]}${i !== wt.length - 1 ? ', ' : ''}`
+    }
+    return datePush;
   }
 }
