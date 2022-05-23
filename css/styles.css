@@ -81,4 +81,39 @@ body {
     color: #ddd;
 }
 
+/*main-app */
+.main-app__menu {
+    border-right: 1px solid #bbb6b6;
+}
+
+.cards__block {
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards__block .card-menu {
+    margin: 5px 7px;
+    flex: 0 1 23%;
+
+}
+
+.main-addres {}
+
+.dropdown-toggle {
+    margin-bottom: 15px;
+}
+
+.list-group-item {
+    line-height: 10px;
+}
+
+.card__title-menu {
+    margin: 0px;
+    padding: 0px;
+    line-height: 15px;
+}
+
+
+/*main-app end*/
 /*body end*/

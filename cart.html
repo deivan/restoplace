@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RestoPlace application</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="container main-app">
+        <div class="row main-app__header">
+            <div class="col-9">
+                <h1 class="display-1">RestoPlace</h1>
+                <p class="lead">
+                    Унікальний сервіс для ресторанів та відвідувачів
+                </p>
+                <div class="dropdown form-check-inline">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Оберіть ваше місто
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="citySelector"></ul>
+                </div>
+                <p class="lead form-check-inline main-app__header--selectedCity" id="selectedCity"></p>
+            </div>
+            <div class="col-3 container">
+                <div class="row main-app__header--marginTop">
+                    <div class="col">
+                        <label for="validationTooltipUsername" class="form-label">Username</label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control" id="validationTooltipUsername"
+                                aria-describedby="validationTooltipUsernamePrepend" required>
+                            <div class="invalid-tooltip">
+                                Please choose a unique and valid username.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row main-app__header--marginTop">
+                    <div class="col">
+                        <label for="validationTooltip02" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="validationTooltip02" required>
+                    </div>
+                </div>
+                <div class="row main-app__header--marginTop">
+                    <div class="col-6">
+                        <button class="btn btn-primary">Login</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-secondary">Signup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row main-app__content main-app__cart">
+            <h2>Ваше замовлення</h2>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row main-app__footer footer__row">
+                <div class="col-4">
+                    <h4>Contacts:</h4>
+                    <ul class="footer__list-first">
+                        <li>phone: +3809566565</li>
+                        <li>email: 223435gmail.com</li>
+                        <li>addres: Dnipro kykyryzina 24</li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <h4>Terms & Agreements:</h4>
+
+                    <a href="#" class="btn btn-primary">Пользовательское соглашение</a>
+                </div>
+                <div class="col-4">
+                    <h4>Feedback:</h4>
+                    <ul class="footer__list-thees">
+                        <li>email: 223435gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"> </Script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>
