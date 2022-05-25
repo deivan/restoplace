@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/card.css">
 </head>
 
 <body>
@@ -66,6 +67,33 @@
         </div>
         <div class="row main-app__content main-app__cart">
             <h2>Ваше замовлення</h2>
+            <div class="cards-basket">
+                <div class="card-basket">
+                    <img class="card-basket__img"
+                        src="https://www.vkusnyblog.ru/wp-content/uploads/2011/08/salat-s-avokado-i-bekonnoi-zapravkoi-new.jpg"
+                        alt="">
+                    <span class="card-basket__name-product">Салат вкусный</span>
+                    <div class="card-basket__btns">
+                        <button class="basket-btn card-basket__btn-del"><img class="card-basket__img-btn-del"
+                                src="img/icon/free-i.png" alt=""></button>
+                        <span class="card-basket__amount">1</span>
+                        <button class="basket-btn card-basket__btn-add">
+                            <img class="card-basket__img-btn-add" src="img/icon/free-i.png" alt="">
+                        </button>
+                    </div>
+                    <div class="card-basket__price">uan<span class="card-basket__price-number">120.22</span></div>
+                </div>
+            </div>
+            <div class="rezultat">
+                <p class="rezultat__count">
+                    ITEMS
+                    <span class="rezultat__text-count"> 5</span>
+                </p>
+                <div class="rezultat__price">
+                    <span class="rezultat__text">TOTAL:</span>
+                    <p class="rezultat__regult"> UAN 120.22</p>
+                </div>
+            </div>
         </div>
     </div>
     <footer class="footer">
