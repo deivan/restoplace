@@ -28,7 +28,7 @@
                     Унікальний сервіс для ресторанів та відвідувачів
                 </p>
                 <div class="dropdown form-check-inline">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    <button disabled class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Оберіть ваше місто
                     </button>
@@ -67,32 +67,19 @@
         </div>
         <div class="row main-app__content main-app__cart">
             <h2>Ваше замовлення</h2>
-            <div class="cards-basket">
-                <div class="card-basket">
-                    <img class="card-basket__img"
-                        src="https://www.vkusnyblog.ru/wp-content/uploads/2011/08/salat-s-avokado-i-bekonnoi-zapravkoi-new.jpg"
-                        alt="">
-                    <span class="card-basket__name-product">Салат вкусный</span>
-                    <div class="card-basket__btns">
-                        <button class="basket-btn card-basket__btn-del"><img class="card-basket__img-btn-del"
-                                src="img/icon/free-i.png" alt=""></button>
-                        <span class="card-basket__amount">1</span>
-                        <button class="basket-btn card-basket__btn-add">
-                            <img class="card-basket__img-btn-add" src="img/icon/free-i.png" alt="">
-                        </button>
-                    </div>
-                    <div class="card-basket__price">uan<span class="card-basket__price-number">120.22</span></div>
-                </div>
-            </div>
+            <div class="cards-basket" id="cartItems"></div>
             <div class="rezultat">
                 <p class="rezultat__count">
-                    ITEMS
-                    <span class="rezultat__text-count"> 5</span>
+                    Обрано блюд &nbsp;
+                    <span class="rezultat__text-count" id="totalCartQuantity"></span>
                 </p>
                 <div class="rezultat__price">
-                    <span class="rezultat__text">TOTAL:</span>
-                    <p class="rezultat__regult"> UAN 120.22</p>
+                    <span class="rezultat__text">ЗАГАЛОМ:</span>
+                    <p class="rezultat__regult"><span id="totalCartPrice"></span> грн.</p>
                 </div>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-success" id="cartProceed" data-bs-toggle="modal" data-bs-target="#cartModal">Оформити замовлення</button>
             </div>
         </div>
     </div>
@@ -122,6 +109,24 @@
         </div>
     </footer>
     </div>
+
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Дякуємо! Ваши гроші витрачені з сенсом!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <p>Платіжна система вже обробляє ваше замовлення, бажаємо гарного дня! Приходьте до нас ще.</p>
+            </div>
+            <div class="cart__modal--footer">
+              <a href="index.html" class="btn btn-primary" id="cartFinished">Повернутися до замовлень</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/data.js"> </Script>
     <script src="js/cart.js"></script>

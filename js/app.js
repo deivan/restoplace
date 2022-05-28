@@ -10,6 +10,7 @@ class App {
   constructor() {
     this.selectedCity = null;
     this.restoranSelector = document.getElementById('restorationListSelector');
+    this.selectedRestaurant = null;
     this.initCities();
     this.initEvents();
     this.restoreCity();
@@ -48,14 +49,16 @@ class App {
     this.restoranSelector.addEventListener('click', e => {
       let restoranId = e.target.dataset.restoran || '';
       let selectedCity = DB.filter(item => item.id == +this.selectedCity)[0];
-      let selected = selectedCity.data.filter(item => item.id == restoranId)[0];
-      let workTime = this.fillData(selected.workTimes);
+      let workTime;
+
+      this.selectedRestaurant = selectedCity.data.filter(item => item.id == restoranId)[0];
+      workTime = this.fillData(this.selectedRestaurant.workTimes);
 
       document.getElementById('restoranDetails').innerHTML = `
-        <h3>${selected.name}</h3>
-        <p><strong class="main-addres">Адреса:</strong>${selected.address}</p>${workTime}
+        <h3>${this.selectedRestaurant.name}</h3>
+        <p><strong class="main-addres">Адреса:</strong>${this.selectedRestaurant.address}</p>${workTime}
       `;
-      this.fillMenu(selected.menu);
+      this.fillMenu(this.selectedRestaurant.menu);
 
     });
   }
@@ -75,7 +78,7 @@ class App {
   fillMenu(menu) {
     let menuposicion = document.querySelector('#currentMenu');
 
-    menuposicion.removeEventListener('click', this.addToCart);
+    menuposicion.removeEventListener('click', this.addToCart.bind(this));
     menuposicion.innerHTML = '';
 
     for (let i = 0; i < menu.length; i++) {
@@ -96,12 +99,21 @@ class App {
           </div>
       `;
       menuposicion.appendChild(itemWrapper);
-      menuposicion.addEventListener('click', this.addToCart);
     }
+    menuposicion.addEventListener('click', this.addToCart.bind(this));
   }
 
   addToCart(e) {
     console.log(+e.target.dataset.id)
+    let menuItem = this.selectedRestaurant.menu.filter(item => item.id == +e.target.dataset.id);
+console.log(menuItem)
+    if (menuItem.length) {
+      let currentCart =  window.localStorage.getItem('cart') || '[]'; // String
+      let cart = JSON.parse(currentCart); // Object
+      cart.push(menuItem[0]);
+      document.getElementById('cartCounter').innerText = cart.length;
+      window.localStorage.setItem('cart', JSON.stringify(cart));
+    }
   }
 
   fillData(wt) {
