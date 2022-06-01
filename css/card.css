@@ -16,7 +16,10 @@ textarea {
     display: flex;
     padding: 15px;
     justify-content: space-around;
+
 }
+
+
 
 .card-basket__img {
     max-width: 150px;
