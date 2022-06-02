@@ -21,7 +21,7 @@ class App {
     if (this.selectedCity) {
       document.querySelector('#selectedCity').innerText = this.cities[this.selectedCity - 1];
       document.querySelector('#selectedCityLabel').innerText = this.cities[this.selectedCity - 1];
-      this.fillRestoranList();  
+      this.fillRestoranList();
     }
   }
 
@@ -86,7 +86,7 @@ class App {
 
       itemWrapper.className = "card card-menu";
       itemWrapper.innerHTML = `
-        <img src="${(menu[i].imageUrl != null) ? menu[i].imageUrl : "https://bipbap.ru/wp-content/uploads/2017/06/14813uxVsXjAPBFmIovEzZkHNnR.jpg"}"
+        <img src="img/${menu[i].img}"
              class="card-img-top" alt="картинка блюда">
           <div class="card-body">
             <h5 class="card-title card__title-menu">${menu[i].name}</h5>
@@ -106,9 +106,9 @@ class App {
   addToCart(e) {
     console.log(+e.target.dataset.id)
     let menuItem = this.selectedRestaurant.menu.filter(item => item.id == +e.target.dataset.id);
-console.log(menuItem)
+    console.log(menuItem)
     if (menuItem.length) {
-      let currentCart =  window.localStorage.getItem('cart') || '[]'; // String
+      let currentCart = window.localStorage.getItem('cart') || '[]'; // String
       let cart = JSON.parse(currentCart); // Object
       cart.push(menuItem[0]);
       document.getElementById('cartCounter').innerText = cart.length;
