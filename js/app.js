@@ -86,7 +86,7 @@ class App {
 
       itemWrapper.className = "card card-menu";
       itemWrapper.innerHTML = `
-        <img src="https://bipbap.ru/wp-content/uploads/2017/06/14813uxVsXjAPBFmIovEzZkHNnR.jpg"
+        <img src="${(menu[i].imageUrl != null) ? menu[i].imageUrl : "https://bipbap.ru/wp-content/uploads/2017/06/14813uxVsXjAPBFmIovEzZkHNnR.jpg"}"
              class="card-img-top" alt="картинка блюда">
           <div class="card-body">
             <h5 class="card-title card__title-menu">${menu[i].name}</h5>
