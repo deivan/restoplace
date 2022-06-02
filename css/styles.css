@@ -117,7 +117,8 @@ body {
 .top-resroran {
     padding-top: 15px;
     padding-bottom: 15px;
-    background: url('/img/background/Rectangle\ 1.jpg');
+    background-image: url('../img/background/Rectangle1.jpg');
+    background-size: cover;
 }
 
 .main-addres {}
