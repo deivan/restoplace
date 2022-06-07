@@ -68,7 +68,9 @@ textarea {
 }
 
 
-
+.main-app__cart {
+    color: #FFF;
+}
 
 
 .card-basket__price {
