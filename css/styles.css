@@ -25,16 +25,82 @@ body {
 }
 
 .lead {
-    color: rgb(68, 68, 68);
+    font-family: 'Kurale', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    color: #fff;
+    padding-top: 0px;
+
+}
+
+.form__btn {
+    background-color: rgba(96, 76, 76, 1);
+    font-size: 17px;
+    margin-top: 10px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    border: none;
+    padding: 10px 20px;
 }
 
 .main-app {
-    background-color: #fff;
+    background-image: url('/img/background/main-app__block.jpg');
     margin-top: 2%;
+    background-size: cover;
+
+}
+
+.main-app__header--selectedCity,
+.main-btn,
+.form__label-stile,
+.form__btn,
+.form-input,
+.main-app-stile {
+    color: #fff;
+    font-family: 'Kurale', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 800;
+    text-align: left;
+}
+
+.main-app-stile {
+    font-size: 25px;
 }
 
 .main-app__header {
-    background-color: #ddd;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 15px 15px;
+
+}
+
+.main-btn {
+    background-color: rgba(96, 76, 76, 1);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 19px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    border: none;
+}
+
+.form-input {
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.5);
+
+}
+
+.main-app__btn-span {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.main-app__header {
+    /* background-color: #ddd;*/
     color: #008;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -45,27 +111,71 @@ body {
     margin-top: 8px;
 }
 
-.main-app__header--selectedCity {
-    color: blue;
-    font-weight: 900;
-}
+
 
 .main-app__content {
-    padding-top: 16px;
+    margin-top: 20px;
     padding-bottom: 16px;
+
+}
+
+.restaurants {
+    margin-top: 30px;
+    border-top: 1px solid #fff;
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    border-radius: 20px;
+
 }
 
 .main-app__footer {
     padding-top: 36px;
     padding-bottom: 16px;
-    background-color: lightgreen;
+    display: flex;
+    justify-content: space-around;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.footer__item,
+.footer__title,
+.footer-btn,
+.main-app-title {
+    color: #fff;
+    font-family: 'Kurale', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 800;
+    text-align: left;
+}
+
+
+.footer__title {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.footer__item {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.footer-btn {
+    font-size: 14px;
+    line-height: 17px;
+    background-color: rgba(96, 76, 76, 0.5);
+    border: none;
 }
 
 .img__top-rest {
     height: 180px;
 }
+
 
 /*body*/
 .restoran__card {
@@ -79,26 +189,29 @@ body {
 }
 
 
-.card-body {
-    color: #000;
-}
-.card-body__name {
 
-}
-.card-body__address {
-}
+
 .card-body__addresses {
     font-weight: 700;
 }
+
 .card__body:hover {
     background-color: #5c5a5a;
     /*todo color no work in hover*/
     color: #ddd;
 }
 
+.card-body {
+    color: #000;
+}
+
 /*main-app */
 .main-app__menu {
     border-right: 1px solid #bbb6b6;
+    color: #fff;
+    padding-top: 20px;
+
+
 }
 
 .cards__block {
@@ -117,7 +230,7 @@ body {
 .top-resroran {
     padding-top: 15px;
     padding-bottom: 15px;
-    background-image: url('../img/background/Rectangle1.jpg');
+    /* background-image: url('../img/background/Rectangle1.jpg');*/
     background-size: cover;
 }
 
@@ -158,8 +271,6 @@ body {
     text-align: center;
 }
 
-.restaurants {
-    margin-top: 30px;
 }
 
 /*main-app end*/

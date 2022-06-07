@@ -23,13 +23,13 @@
     <div class="container main-app">
         <div class="row main-app__header">
             <div class="col-9">
-                <h1 class="display-1">RestoPlace</h1>
+                <h1 class="display-1 logo"><img class="logo__img" src="img/logo/logo.png" alt=""></h1>
                 <p class="lead">
                     Унікальний сервіс для ресторанів та відвідувачів
                 </p>
                 <div class="dropdown form-check-inline">
-                    <button disabled class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <button disabled class="btn btn-primary dropdown-toggle main-btn" type="button"
+                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Оберіть ваше місто
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="citySelector"></ul>
@@ -39,9 +39,9 @@
             <div class="col-3 container">
                 <div class="row main-app__header--marginTop">
                     <div class="col">
-                        <label for="validationTooltipUsername" class="form-label">Username</label>
+                        <label for="validationTooltipUsername " class="form-label form__label-stile">Username</label>
                         <div class="input-group has-validation">
-                            <input type="text" class="form-control" id="validationTooltipUsername"
+                            <input type="text" class="form-control form-input" id="validationTooltipUsername"
                                 aria-describedby="validationTooltipUsernamePrepend" required>
                             <div class="invalid-tooltip">
                                 Please choose a unique and valid username.
@@ -51,16 +51,16 @@
                 </div>
                 <div class="row main-app__header--marginTop">
                     <div class="col">
-                        <label for="validationTooltip02" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="validationTooltip02" required>
+                        <label for="validationTooltip02" class="form-label form__label-stile ">Password</label>
+                        <input type="password" class="form-control form-input" id="validationTooltip02" required>
                     </div>
                 </div>
                 <div class="row main-app__header--marginTop">
                     <div class="col-6">
-                        <button class="btn btn-primary">Login</button>
+                        <button class="btn btn-primary form__btn">Login</button>
                     </div>
                     <div class="col-6">
-                        <button class="btn btn-secondary">Signup</button>
+                        <button class="btn btn-primary form__btn">Signup</button>
                     </div>
                 </div>
             </div>
@@ -79,51 +79,50 @@
                 </div>
             </div>
             <div class="text-center">
-                <button type="button" class="btn btn-success" id="cartProceed" data-bs-toggle="modal" data-bs-target="#cartModal">Оформити замовлення</button>
+                <button type="button" class="btn btn-success main-btn" id="cartProceed" data-bs-toggle="modal"
+                    data-bs-target="#cartModal">Оформити замовлення</button>
             </div>
         </div>
-    </div>
-    <footer class="footer">
-        <div class="container">
+
+        <footer class="footer">
             <div class="row main-app__footer footer__row">
                 <div class="col-4">
-                    <h4>Contacts:</h4>
+                    <h4 class="footer__title-first footer__title">Contacts:</h4>
                     <ul class="footer__list-first">
-                        <li>phone: +3809566565</li>
-                        <li>email: 223435gmail.com</li>
-                        <li>addres: Dnipro kykyryzina 24</li>
+                        <li class="footer__item-first footer__item">phone: +3809566565</li>
+                        <li class="footer__item-first footer__item">email: 223435gmail.com</li>
+                        <li class="footer__item-first footer__item">addres: Dnipro kykyryzina 24</li>
                     </ul>
                 </div>
                 <div class="col-4">
-                    <h4>Terms & Agreements:</h4>
+                    <h4 class="footer__title-second footer__title">Terms & Agreements:</h4>
 
-                    <a href="#" class="btn btn-primary">Пользовательское соглашение</a>
+                    <a href="#" class="btn btn-primary footer-btn">Пользовательское соглашение</a>
                 </div>
                 <div class="col-4">
-                    <h4>Feedback:</h4>
+                    <h4 class="footer__title-thees footer__title">Feedback:</h4>
                     <ul class="footer__list-thees">
-                        <li>email: 223435gmail.com</li>
+                        <li class="footer__item-thees footer__item">email: 223435gmail.com</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
     </div>
-
+    </div>
     <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Дякуємо! Ваши гроші витрачені з сенсом!</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Дякуємо! Ваши гроші витрачені з сенсом!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Платіжна система вже обробляє ваше замовлення, бажаємо гарного дня! Приходьте до нас ще.</p>
+                </div>
+                <div class="cart__modal--footer">
+                    <a href="index.html" class="btn btn-primary" id="cartFinished">Повернутися до замовлень</a>
+                </div>
             </div>
-            <div class="modal-body text-center">
-              <p>Платіжна система вже обробляє ваше замовлення, бажаємо гарного дня! Приходьте до нас ще.</p>
-            </div>
-            <div class="cart__modal--footer">
-              <a href="index.html" class="btn btn-primary" id="cartFinished">Повернутися до замовлень</a>
-            </div>
-          </div>
         </div>
     </div>
 

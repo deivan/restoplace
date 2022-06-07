@@ -11,6 +11,11 @@
     <title>RestoPlace application</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kurale&family=Open+Sans:wght@400;700&family=Rubik:wght@800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
@@ -20,17 +25,20 @@
     <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
     <div class="container main-app">
+
+
         <div class="row main-app__header">
             <div class="col-9">
-                <h1 class="display-1">RestoPlace</h1>
+                <h1 class="display-1 logo"><img class="logo__img" src="img/logo/logo.png" alt=""></h1>
                 <p class="lead">
                     Унікальний сервіс для ресторанів та відвідувачів
                 </p>
                 <div class="dropdown form-check-inline">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    <button class="btn btn-primary dropdown-toggle main-btn" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Оберіть ваше місто
+                        <span class="main-app__btn-span ">Оберіть ваше місто</span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="citySelector"></ul>
                 </div>
@@ -39,9 +47,9 @@
             <div class="col-3 container">
                 <div class="row main-app__header--marginTop">
                     <div class="col">
-                        <label for="validationTooltipUsername" class="form-label">Username</label>
+                        <label for="validationTooltipUsername " class="form-label form__label-stile">Username</label>
                         <div class="input-group has-validation">
-                            <input type="text" class="form-control" id="validationTooltipUsername"
+                            <input type="text" class="form-control form-input" id="validationTooltipUsername"
                                 aria-describedby="validationTooltipUsernamePrepend" required>
                             <div class="invalid-tooltip">
                                 Please choose a unique and valid username.
@@ -51,22 +59,22 @@
                 </div>
                 <div class="row main-app__header--marginTop">
                     <div class="col">
-                        <label for="validationTooltip02" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="validationTooltip02" required>
+                        <label for="validationTooltip02" class="form-label form__label-stile ">Password</label>
+                        <input type="password" class="form-control form-input" id="validationTooltip02" required>
                     </div>
                 </div>
                 <div class="row main-app__header--marginTop">
                     <div class="col-6">
-                        <button class="btn btn-primary">Login</button>
+                        <button class="btn btn-primary form__btn">Login</button>
                     </div>
                     <div class="col-6">
-                        <button class="btn btn-secondary">Signup</button>
+                        <button class="btn btn-primary form__btn">Signup</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row main-app__content">
-            <h2>TOP Restorations <span> in Kiev</span></h2>
+            <h2 class="main-app-title">TOP Restorations <span> in Kiev</span></h2>
             <div class="col d-flex flex-wrap top-resroran">
                 <div class="col-3 restoran__card ">
                     <a href="#" class="restoran__card-btn">
@@ -98,7 +106,8 @@
                             <img src="img/top_res3.jpg" class="card-img-top img__top-rest" alt="...">
                             <div class="card-body">
                                 <h4 class="card-body__name">La Veranda</h4>
-                                <span class="card-body__address"><span class="card-body__addresses">Адрес:</span> вулиця
+                                <span class="card-body__address"><span class="card-body__addresses">Адрес:</span>
+                                    вулиця
                                     Академіка Богомольця, 7/14, Київ, 01024</span>
                             </div>
                         </div>
@@ -166,12 +175,14 @@
                 </div>
             </div>
         </div>
-        <div class="row main-app__content 
-        restaurants ">
+
+        <div class="row main-app__content restaurants">
             <div class="col-3 main-app__menu">
-                <h2>Restorations in <span id="selectedCityLabel"></span></h2>
+                <h2 class="main-app-stile main-app__title">Restorations in <span class="main-app-stile"
+                        id="selectedCityLabel"></span>
+                </h2>
                 <div class="dropdown">
-                    <button class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenu2"
+                    <button class="btn btn-info dropdown-toggle main-btn" href="#" role="button" id="dropdownMenu2"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Оберіть заклад
                     </button>
@@ -185,32 +196,31 @@
                 </div>
             </div>
         </div>
-    </div>
-    <footer class="footer">
-        <div class="container">
+        <footer class="footer">
             <div class="row main-app__footer footer__row">
                 <div class="col-4">
-                    <h4>Contacts:</h4>
+                    <h4 class="footer__title-first footer__title">Contacts:</h4>
                     <ul class="footer__list-first">
-                        <li>phone: +3809566565</li>
-                        <li>email: 223435gmail.com</li>
-                        <li>addres: Dnipro kykyryzina 24</li>
+                        <li class="footer__item-first footer__item">phone: +3809566565</li>
+                        <li class="footer__item-first footer__item">email: 223435gmail.com</li>
+                        <li class="footer__item-first footer__item">addres: Dnipro kykyryzina 24</li>
                     </ul>
                 </div>
                 <div class="col-4">
-                    <h4>Terms & Agreements:</h4>
+                    <h4 class="footer__title-second footer__title">Terms & Agreements:</h4>
 
-                    <a href="#" class="btn btn-primary">Пользовательское соглашение</a>
+                    <a href="#" class="btn btn-primary footer-btn">Пользовательское соглашение</a>
                 </div>
                 <div class="col-4">
-                    <h4>Feedback:</h4>
+                    <h4 class="footer__title-thees footer__title">Feedback:</h4>
                     <ul class="footer__list-thees">
-                        <li>email: 223435gmail.com</li>
+                        <li class="footer__item-thees footer__item">email: 223435gmail.com</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+
+    </div>
     <a href="cart.html" class="cart__main">
         <i class="bi bi-cart"></i>
         <span id="cartCounter"></span>
