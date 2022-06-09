@@ -22,6 +22,15 @@
     <div class="container main-app">
         <div class="row main-app__content main-app__cart">
             <h2>Дані ресторану</h2>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Введить назву" aria-label="Введить назву">
+                <span class="input-group-text">Назва ресторану</span>
+                <input type="text" class="form-control" placeholder="Номер телефону" aria-label="Номер телефону">
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">Додаткові дані закладу</span>
+                <textarea class="form-control" aria-label="Додаткові дані закладу"></textarea>
+            </div>
         </div>
         <div class="row main-app__content main-app__cart">
             <h2>Аналіз доходів</h2>
@@ -66,6 +75,40 @@
         </div>
         <div class="row main-app__content main-app__cart">
             <h2>Керування меню</h2>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">№</th>
+                        <th scope="col">Назва блюда</th>
+                        <th scope="col">Опис</th>
+                        <th scope="col">Ціна</th>
+                        <th scope="col">Картинка</th>
+                        <th scope="col">Додатково</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10001</td>
+                        <td>Шашлык</td>
+                        <td>ціна за порцію 150 г</td>
+                        <td>50.00</td>
+                        <td><button type="button" class="btn btn-primary">Додати фото</button></td>
+                        <td>
+                            <button type="button" class="btn btn-success">Змінити</button>
+                            <button type="button" class="btn btn-danger">Видалити</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <footer class="footer">
