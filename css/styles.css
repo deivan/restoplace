@@ -46,7 +46,7 @@ body {
 }
 
 .main-app {
-    background-image: url('/img/background/main-app__block.jpg');
+    background-image: url('../img/background/main-app__block.jpg');
     margin-top: 2%;
     background-size: cover;
 
@@ -189,7 +189,9 @@ body {
 }
 
 
-
+.card {
+    min-height: 330px;
+}
 
 .card-body__addresses {
     font-weight: 700;
